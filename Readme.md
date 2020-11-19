@@ -1,5 +1,7 @@
 #### Linq Tutorial
 
+**Online Cheat Sheet**: https://vslapp.files.wordpress.com/2011/11/linq-cheatsheet.pdf
+
 Linq = Language Integrated Query
 
 Available in `System.Linq` namespace
