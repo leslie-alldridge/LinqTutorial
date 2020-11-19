@@ -18,6 +18,17 @@ There are three ways to write a query:
 - Method syntax (uses lambda expressions) - great for simple queries - combined with `.` dots
 - Mixed syntax (query + method)
 
+**IEnumerable**
+
+It is an interface and available in `System.Collection` namespace.
+
+All of the collections in C# implement IEnumerable. It's a type of iteration design pattern.
+
+Thanks to this interface we can iterate using a `foreach` loop on the collection.
+
+It can also support generic collections using `<T>`
+
+Should be used for in memory data objects.
 
 
 
