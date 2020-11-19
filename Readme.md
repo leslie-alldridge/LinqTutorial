@@ -26,9 +26,19 @@ All of the collections in C# implement IEnumerable. It's a type of iteration des
 
 Thanks to this interface we can iterate using a `foreach` loop on the collection.
 
-It can also support generic collections using `<T>`
+It can also support generic collections using `<T>` due to its child `IEnumerable<T>`
 
 Should be used for in memory data objects.
+
+**IQueryable**
+
+It is an interface and available in `System.Linq` namespace.
+
+It is a child of `IEnumerable`
+
+It has a property named `Provider` which is of type `IQueryProvider` interface and it's used in LinqProviders.
+
+
 
 
 

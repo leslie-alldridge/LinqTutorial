@@ -51,7 +51,9 @@ namespace LinqTutorial
                                           where emp.Id == 1
                                           select emp;
 
-            foreach (var item in query)
+            IQueryable<Employee> query1 = employees.AsQueryable().Where(x => x.Id == 1);
+
+            foreach (var item in query1)
             {
                 WriteLine($"Id = {item.Id}, Name = {item.Name}");
             }
