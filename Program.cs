@@ -70,7 +70,7 @@ namespace LinqTutorial
             };
 
             var basicQuery = (from emp in employeeList
-                             select emp).ToList();
+                              select emp).ToList();
 
             var basicMethod = employeeList.ToList();
 
@@ -91,6 +91,31 @@ namespace LinqTutorial
                 WriteLine(item);
                 // WriteLine($"{item.Name}, {item.Email}");
             }
+
+            // SelectMany
+
+            var person1 = new Person{ Name = "Leslie", Age = 28, Likes= new List<string>() { "toys", "knex" } };
+            var person2 = new Person { Name = "Mark", Age = 23, Likes = new List<string>() { "cars", "bikes" } };
+
+
+            //List<string> nameList = new List<string>(){ "Leslie", "Alan" };
+            List<Person> peopleList = new List<Person>() { person1, person2 };
+
+            //var methodResult = nameList.SelectMany(x => x).ToList();
+            var methodResult = peopleList.SelectMany(x => x.Likes, (x, toy) => new { x.Name, toy}).ToList();
+            // this prints out a flattened list e.g. 
+            /* 
+                {Name="Leslie", toy="toys"}
+                {Name="Leslie", toy="knex"}
+                {Name="Mark", toy="cars"}
+                {Name="Mark", toy="bikes"}
+             */
+
+            foreach (var peopleName in methodResult)
+            {
+                WriteLine(peopleName);
+            }
+
         }
 
         class Employee
@@ -99,5 +124,12 @@ namespace LinqTutorial
             public string Name { get; set; }
             public string Email { get; set; }
         }
+
+    class Person
+    {
+        public string Name { get; set;}
+        public int Age { get; set; }
+        public List<string> Likes { get; set; }
+    }
     }
 }
