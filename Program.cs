@@ -83,7 +83,10 @@ namespace LinqTutorial
 
             var basicPropMethod = employeeList.Select(emp => emp.Id).ToList();
 
-            foreach (var item in basicPropMethod)
+            // Using select with an index
+            var indexPropMethod = employeeList.Select((emp, index) => new { Index = index, Name = emp.Name });
+
+            foreach (var item in indexPropMethod)
             {
                 WriteLine(item);
                 // WriteLine($"{item.Name}, {item.Email}");
