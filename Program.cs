@@ -57,12 +57,44 @@ namespace LinqTutorial
             {
                 WriteLine($"Id = {item.Id}, Name = {item.Name}");
             }
+
+            WriteLine("Projection....");
+
+            List<Employee> employeeList = new List<Employee>()
+            {
+                new Employee(){Id = 1, Name = "Leslie", Email="Leslie@gmail.com"},
+                new Employee(){Id = 2, Name = "Adam", Email="Adam@gmail.com"},
+                new Employee(){Id = 3, Name = "Test", Email="Test@gmail.com"},
+                new Employee(){Id = 4, Name = "Person", Email="Person@gmail.com"},
+                new Employee(){Id = 5, Name = "Mark", Email="Mark@gmail.com"}
+            };
+
+            var basicQuery = (from emp in employeeList
+                             select emp).ToList();
+
+            var basicMethod = employeeList.ToList();
+
+
+            /// Operations
+            /// 
+
+            var basicPropQuery = (from emp in employeeList
+                                  select emp.Id).ToList();
+
+            var basicPropMethod = employeeList.Select(emp => emp.Id).ToList();
+
+            foreach (var item in basicPropMethod)
+            {
+                WriteLine(item);
+                // WriteLine($"{item.Name}, {item.Email}");
+            }
         }
 
         class Employee
         {
             public int Id { get; set; }
             public string Name { get; set; }
+            public string Email { get; set; }
         }
     }
 }

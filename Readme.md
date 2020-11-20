@@ -40,7 +40,9 @@ It is a child of `IEnumerable`
 
 It has a property named `Provider` which is of type `IQueryProvider` interface and it's used in LinqProviders.
 
+**Projection**
 
+Projection is used to select data from a data source and create a new form of data. There are two methods, `Select` and `SelectMany`.
 
 
 
