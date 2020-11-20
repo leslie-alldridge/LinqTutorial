@@ -125,11 +125,11 @@ namespace LinqTutorial
             public string Email { get; set; }
         }
 
-    class Person
-    {
-        public string Name { get; set;}
-        public int Age { get; set; }
-        public List<string> Likes { get; set; }
-    }
+        class Person
+        {
+            public string Name { get; set;}
+            public int Age { get; set; }
+            public List<string> Likes { get; set; }
+        }
     }
 }
